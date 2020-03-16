@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('pesan/{id}', 'PesanController@index');
+Route::post('pesan/{id}', 'PesanController@pesan');
+Route::get('checkout', 'PesanController@checkout');
+Route::delete('checkout/{id}', 'PesanController@delete');
+Route::get('konfirmasi-checkout', 'PesanController@konfirmasi');
+
+Route::get('profile', 'ProfileController@index');
+Route::post('profile', 'ProfileController@update');
