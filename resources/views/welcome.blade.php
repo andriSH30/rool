@@ -5,9 +5,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    @section('content')
+  @section('content')
     <div id="my-body">
-    <div class="jumbotron" id="my-jumbotron">
+    <div class="jumbotron mx-5" id="my-jumbotron">
         <div class="container text-center" id="jumbo-text-contain">
             <h4 class="display-4 mt-5">Welcome To Rool !</h4>
             <p class="lead">Belanja dengan mudah di Rool</p>
@@ -69,38 +69,32 @@
           
           <h5 class="text-uppercase">Layanan Kami</h5>
   
-          <ul class="list-unstyled">
+          <ul class="list-group">
             <li>
-              <a href="#!">Link 1</a>
+              <a href="#!">Bantuan</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a href="#!">Pengembalian</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
+              <a href="#!">Keamanan</a>
             </li>
           </ul>
   
         </div>
         <div class="col-md-3 mb-md-0 mb-3">
   
-          <h5 class="text-uppercase">TENTANG KAMi</h5>
+          <h5 class="text-uppercase">ROOL</h5>
   
-          <ul class="list-unstyled">
+          <ul class="list-group">
             <li>
-              <a href="#!">Link 1</a>
+              <a href="#!">Tentang Kami</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a href="#!">Syarat dan ketentuan</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
+              <a href="#!">Kebijakan Privasi</a>
             </li>
           </ul>
   

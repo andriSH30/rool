@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Rool, Situs Belanja Online Terlengkap</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
@@ -21,8 +21,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
+                
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ url('images/ROOL.png') }}" class="img-responsive w-75"alt="">
                 </a>
@@ -32,20 +33,25 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                    <div class="navbar-nav mx-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Cari Barang" aria-label="search_barang" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary" type="button"><img src="./images/loupe.png" class="img-responsive w-75"></button>
+                            </div>
+                          </div>
+                        </div>
+  
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link display-6" style="color: black" href="{{ route('login') }}">Login</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" style="color: black" href="{{ route('register') }}">Register</a>
                                 </li>
                             @endif
                         @else
@@ -59,7 +65,7 @@
                             }
                             ?>
                             <a class="nav-link" href="{{ url('checkout') }}">
-                                <i class="fa fa-shopping-cart my-3"></i>
+                                <img src="./images/shopping-cart.png"/></i>
                                 @if(!empty($notif))
                                 <span class="badge badge-danger">{{ $notif }}</span></a>
                                 @endif
@@ -90,8 +96,7 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
+        <main class="mt-5">
             @yield('content')
         </main>
     </div>

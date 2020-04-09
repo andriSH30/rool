@@ -3,8 +3,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" >
 
 @section('content')
-
-    <div class="container">
+    <div class="container pt-5">
         <div class="row justify-content-center">
             <div class="col-9 py-2" id="header-decor">
                 @if(!empty($pesanan))
@@ -80,12 +79,12 @@
                 </div>
                 @endforeach
                 <div class="row mt-4 justify-content-center">
-                <button type="submit" class="btn btn-outline w-75 mt-4" id="checkout-btn"><a href="{{ url('konfirmasi-checkout') }}" class="btn btn-success" onclick="return confirm('Anda Yakin Ingin Checkout ?')"><i class="fa fa-shopping-cart">LANJUT CHECKOUT</i></a></button>
+                <button type="submit" class="btn btn-outline w-75 mt-4" id="checkout-btn"><a href="{{ url('konfirmasi-checkout') }}" class="btn btn-success" onclick="return confirm('Anda Yakin Ingin Checkout ?')"><i class="fa fa-shopping-cart"> Checkout</i></a></button>
             </div>    
             </div>
             </div>
         </div>
         @endif
-        @endsection
     </div>
+    @endsection
     
