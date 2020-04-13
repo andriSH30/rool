@@ -4,15 +4,19 @@
 
 @section('content')
     <div class="container pt-5">
+        <div class="col-md-12">
+            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+        </div>
         <div class="row justify-content-center">
             <div class="col-9 py-2" id="header-decor">
                 @if(!empty($pesanan))
                 <strong><p align="center">Tanggal Pesan : {{ $pesanan->tanggal }}</p></strong>
-                <h6 class="display-6">Total Produk (1 Barang )</h6>
+                <h6 class="display-6">Total Produk ( {{ $pesanan->jumlah_harga }} )</h6>
             </div>
         </div>
         <?php $no = 1; ?>
         @foreach ($pesanan_details as $pesanan_detail)
+        <table>
         <div class="row justify-content-center" id="checkout-container">
             <div class="col-6" id="product-cart">
             <div class="row">
@@ -38,11 +42,18 @@
             </div>
             <div class="row" id="ukuran-prod" >    
         </div>
+        <form action="{{ url('checkout') }}/{{ $pesanan_detail->id }}" method="POST">
+            @csrf
+           {{ method_field('DELETE') }}
+           <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin Ingin Menghapus ?');" ><i class="fa fa-trash"></i></button>
+       </form>
         </div>    
         </div>
         <hr class="style-one mt-4 mx-3">    
         </div>
             <div class="col-3" id="cart-details">
+            </table>
+                @endforeach
                 <div class="row justify-content-center mb-3" id="cart-header">
                 <h6 class="display-6 mt-3">Masukkan Kode Voucher</h6>
                 <div id="cart-voucher" class=" text-center py-3">
@@ -77,7 +88,6 @@
                     <h6 class="display-6">Rp. {{ number_format($pesanan->jumlah_harga) }}</h6>
                 </div>
                 </div>
-                @endforeach
                 <div class="row mt-4 justify-content-center">
                 <button type="submit" class="btn btn-outline w-75 mt-4" id="checkout-btn"><a href="{{ url('konfirmasi-checkout') }}" class="btn btn-success" onclick="return confirm('Anda Yakin Ingin Checkout ?')"><i class="fa fa-shopping-cart"> Checkout</i></a></button>
             </div>    
