@@ -35,12 +35,12 @@
                                     <tr>
                                         <td>Stok</td>
                                         <td>:</td>
-                                        <td>Rp. {{ number_format($barang->stok) }}</td>
+                                        <td>{{ number_format($barang->stok) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Keterangan</td>
                                         <td>:</td>
-                                        <td>Rp. {{ $barang->keterangan }}</td>
+                                        <td>{{ $barang->keterangan }}</td>
                                     </tr>
                                     
                                         <tr>
